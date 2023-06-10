@@ -6,9 +6,17 @@ function RegisterPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [passwordConfirm, setPasswordConfirm] = useState('');
     function registerUser(ev) {
-        ev.preventDefault();
-        let req = axios.get('http://localhost:4000/test');
+        if (password === passwordConfirm) {
+            ev.preventDefault()
+            axios.post('/register', {
+                name, email, password
+            });
+        } else {
+            ev.preventDefault()
+            alert("Please check if you password matches the password confirmation")
+        }
     }
     return (
         <div className="mt-32 grow flex items-center justify-around">
@@ -24,6 +32,9 @@ function RegisterPage() {
                     <input type="password" placeholder="Password"
                         value={password}
                         onChange={ev => setPassword(ev.target.value)} />
+                    <input type="password" placeholder="Confirm your Password"
+                        value={passwordConfirm}
+                        onChange={ev => setPasswordConfirm(ev.target.value)} />
                     <button className="primary">Register</button>
                     <div className="text-center py-2 text-gray-500">
                         <span>Already a Member?  </span>
