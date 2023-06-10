@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require('cors');
 const mongoose = require("mongoose");
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 const User = require('./models/user.js');
 
 mongoose.connect(process.env.MONGO_URL);
