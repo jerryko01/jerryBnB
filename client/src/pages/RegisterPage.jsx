@@ -7,16 +7,22 @@ function RegisterPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
-    function registerUser(ev) {
-        if (password === passwordConfirm) {
-            ev.preventDefault()
-            axios.post('/register', {
-                name, email, password
-            });
-        } else {
-            ev.preventDefault()
-            alert("Please check if you password matches the password confirmation")
+    async function registerUser(ev) {
+        try {
+            if (password === passwordConfirm) {
+                ev.preventDefault()
+                await axios.post('/register', {
+                    name, email, password
+                });
+                alert('Registration Successful');
+            } else {
+                ev.preventDefault()
+                alert("Please check if you password matches the password confirmation")
+            }
+        } catch (e) {
+            alert("Registration failed. Please try again later.")
         }
+
     }
     return (
         <div className="mt-32 grow flex items-center justify-around">
