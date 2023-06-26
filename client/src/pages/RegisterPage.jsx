@@ -21,6 +21,7 @@ function RegisterPage() {
             }
         } catch (e) {
             alert("Registration failed. Please try again later.")
+            console.log(e);
         }
 
     }
