@@ -1,9 +1,11 @@
 import './App.css';
+import { useEffect } from 'react';
 import { Route, Routes } from "react-router-dom";
 import IndexPage from "./pages/IndexPage.jsx";
 import LogInPage from "./pages/LogInPage.jsx";
 import RegisterPage from "./pages/RegisterPage.jsx";
 import Layout from "./Layout.jsx";
+import AccountPage from "./pages/AccountPage.jsx"
 import axios from "axios";
 import { UserContextProvider } from "./UserContext";
 
@@ -18,6 +20,7 @@ function App() {
           <Route index element={<IndexPage />} />
           <Route path="/login" element={<LogInPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/account/:subpage?" element={<AccountPage />} />
         </Route>
       </Routes>
     </UserContextProvider>

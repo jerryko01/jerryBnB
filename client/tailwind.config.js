@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        searchButton: "#F5385D"
+        primary: "#F5385D"
       }
     },
   },

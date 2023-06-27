@@ -32,7 +32,7 @@ function LogInPage() {
                 <button className="primary">Login</button>
                 <div className="text-center py-2 text-gray-500">
                     <span>Aready a Member? </span>
-                    <Link className="underline text-black" to={"/register"}>Regsiter</Link>
+                    <Link className="underline text-black" to={"/register"}>Register</Link>
                 </div>
             </form>
         </div>
