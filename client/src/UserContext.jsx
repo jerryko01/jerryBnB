@@ -8,7 +8,7 @@ export function UserContextProvider({ children }) {
     const [ready, setReady] = useState(false);
     useEffect(() => {
         if (!user) {
-            axios.get("http://127.0.0.1:4000/profile").then(({ data }) => {
+            axios.get("https://jerrybnb-deploy-backend.onrender.com/profile").then(({ data }) => {
                 setUser(data);
                 setReady(true);
             })

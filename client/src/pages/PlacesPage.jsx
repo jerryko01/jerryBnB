@@ -7,7 +7,7 @@ import PlaceImg from "../PlaceImg.jsx"
 const PlacesPage = () => {
     const [places, setPlaces] = useState([])
     useEffect(() => {
-        axios.get('http://127.0.0.1:4000/user-places').then(({ data }) => {
+        axios.get('https://jerrybnb-deploy-backend.onrender.com/user-places').then(({ data }) => {
             setPlaces(data)
         })
     }, [])

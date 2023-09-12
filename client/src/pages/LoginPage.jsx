@@ -11,7 +11,7 @@ const LoginPage = () => {
     async function handleLoginSubmit(ev) {
         ev.preventDefault();
         try {
-            const { data } = await axios.post("http://127.0.0.1:4000/login", { email, password });
+            const { data } = await axios.post("https://jerrybnb-deploy-backend.onrender.com/login", { email, password });
             setUser(data)
             alert("Login Successful");
             setRedirect(true);

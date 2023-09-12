@@ -26,7 +26,7 @@ const BookingWidget = ({ place }) => {
 
     async function bookThisPlace() {
         const data = { checkIn, checkOut, numberOfGuests, name, phone, place: place._id, price: numberOfNights * place.price }
-        const response = await axios.post('http://127.0.0.1:4000/bookings', data);
+        const response = await axios.post('https://jerrybnb-deploy-backend.onrender.com/bookings', data);
         const bookingId = response.data._id;
         setRedirect(`/account/bookings/${bookingId}`)
     }

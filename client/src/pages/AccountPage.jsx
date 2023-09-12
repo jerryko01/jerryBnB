@@ -15,7 +15,7 @@ const AccountPage = () => {
 
 
     async function logout() {
-        await axios.post('http://127.0.0.1:4000/logout')
+        await axios.post('https://jerrybnb-deploy-backend.onrender.com/logout')
         setRedirect("/")
         setUser(null)
     }

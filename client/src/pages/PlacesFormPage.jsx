@@ -23,7 +23,7 @@ export default function PlacesFormPage() {
         if (!id) {
             return;
         }
-        axios.get('http://127.0.0.1:4000/places/' + id).then(response => {
+        axios.get('https://jerrybnb-deploy-backend.onrender.com/places/' + id).then(response => {
             const { data } = response;
             setTitle(data.title);
             setAddress(data.address);
@@ -61,10 +61,10 @@ export default function PlacesFormPage() {
         ev.preventDefault();
         const placeData = { title, address, addedPhotos, description, perks, extraInfo, checkIn, checkOut, maxGuests, price }
         if (id) {
-            await axios.put("http://127.0.0.1:4000/places", { id, ...placeData })
+            await axios.put("https://jerrybnb-deploy-backend.onrender.com/places", { id, ...placeData })
             setRedirect(true);
         } else {
-            await axios.post("http://127.0.0.1:4000/places", placeData)
+            await axios.post("https://jerrybnb-deploy-backend.onrender.com/places", placeData)
             setRedirect(true);
         }
     }

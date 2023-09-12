@@ -8,7 +8,7 @@ import { format, differenceInCalendarDays } from "date-fns";
 const BookingsPage = () => {
     const [bookings, setBookings] = useState([]);
     useEffect(() => {
-        axios.get("http://127.0.0.1:4000/bookings").then(response => {
+        axios.get("https://jerrybnb-deploy-backend.onrender.com/bookings").then(response => {
             setBookings(response.data)
         })
     }, [])

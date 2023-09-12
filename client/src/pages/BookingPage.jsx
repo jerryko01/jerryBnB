@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import axios from "axios";
 import AddressLink from "../AddressLink";
 import PlaceGallery from "../PlaceGallery";
-import { format, differenceInCalendarDays } from "date-fns";
+import { format } from "date-fns";
 
 
 const BookingPage = () => {
@@ -11,7 +11,7 @@ const BookingPage = () => {
     const [booking, setBooking] = useState(null);
     useEffect(() => {
         if (id) {
-            axios.get('http://127.0.0.1:4000/bookings').then(response => {
+            axios.get('https://jerrybnb-deploy-backend.onrender.com/bookings').then(response => {
                 const foundBooking = response.data.find(({ _id }) => _id === id);
                 if (foundBooking) {
                     setBooking(foundBooking)

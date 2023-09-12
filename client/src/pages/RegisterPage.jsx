@@ -13,7 +13,7 @@ const RegisterPage = () => {
             alert('Please Fill in All the Information')
         } else {
             try {
-                await axios.post('http://127.0.0.1:4000/register', {
+                await axios.post('https://jerrybnb-deploy-backend.onrender.com/register', {
                     name, email, password
                 })
                 setRedirect(true);
