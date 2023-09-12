@@ -4,7 +4,7 @@ app.use(express.json());
 const cors = require('cors')
 app.use(cors({
     credentials: true,
-    origin: 'http://127.0.0.1:5173'
+    origin: 'https://jerrybnb.onrender.com'
 }))
 const mongoose = require('mongoose');
 require('dotenv').config()
